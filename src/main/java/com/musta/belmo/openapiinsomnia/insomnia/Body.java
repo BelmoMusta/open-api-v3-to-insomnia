@@ -1,5 +1,5 @@
 
-package com.musta.belmo.openapiinsomnia;
+package com.musta.belmo.openapiinsomnia.insomnia;
 
 import lombok.Getter;
 import lombok.Setter;

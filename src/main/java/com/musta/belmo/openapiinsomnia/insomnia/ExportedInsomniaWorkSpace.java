@@ -1,5 +1,5 @@
 
-package com.musta.belmo.openapiinsomnia;
+package com.musta.belmo.openapiinsomnia.insomnia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -11,8 +11,8 @@ import java.util.List;
 public class ExportedInsomniaWorkSpace {
 
     @JsonProperty("resources")
-    private List<Resource> mResources;
+    private List<Resource> resources;
     @JsonProperty("__export_format")
-    private Integer m_ExportFormat;
+    private Integer exportFormat;
  
 }

@@ -1,4 +1,4 @@
-package com.musta.belmo.openapiinsomnia;
+package com.musta.belmo.openapiinsomnia.insomnia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -9,15 +9,15 @@ import lombok.Setter;
 public class Authentication {
 
     @JsonProperty("disabled")
-    private Boolean mDisabled;
+    private Boolean disabled;
 
     @JsonProperty("password")
-    private String mPassword;
+    private String password;
 
     @JsonProperty("type")
-    private String mType;
+    private String type;
 
     @JsonProperty("username")
-    private String mUsername;
+    private String username;
  
 }

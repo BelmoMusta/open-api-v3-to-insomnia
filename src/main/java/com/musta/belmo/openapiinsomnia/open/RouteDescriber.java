@@ -11,18 +11,18 @@ import java.util.List;
 public class RouteDescriber {
 
     @JsonProperty("consumes")
-    private List<Object> mConsumes;
+    private List<Object> consumes;
     @JsonProperty("methods")
-    private List<String> mMethods;
+    private List<String> methods;
     @JsonProperty("params")
-    private List<Param> mParams;
+    private List<Param> params;
     @JsonProperty("paths")
-    private List<String> mPaths;
+    private List<String> paths;
     @JsonProperty("produces")
-    private List<String> mProduces;
+    private List<String> produces;
     @JsonProperty("returnType")
-    private String mReturnType;
+    private String returnType;
     @JsonProperty("returnTypeWrappedInResponseEntity")
-    private Boolean mReturnTypeWrappedInResponseEntity;
+    private Boolean returnTypeWrappedInResponseEntity;
  
 }

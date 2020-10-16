@@ -8,11 +8,11 @@ import lombok.Data;
 public class Param {
 
     @JsonProperty("classType")
-    private String mClassType;
+    private String classType;
     @JsonProperty("name")
-    private Object mName;
+    private Object name;
     @JsonProperty("type")
-    private String mType;
+    private String type;
  
 
 }

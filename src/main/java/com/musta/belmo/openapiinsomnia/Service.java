@@ -30,7 +30,10 @@ public class Service {
 	
 	static void createInsomniaImportFile(String jsonFile, String outputFile) throws IOException {
 		final List<RouteDescriber> list = RoutesService.readRoutesDescribers(jsonFile);
-		
+		createFronRoutesDescribers(outputFile, list);
+	}
+	
+	public static void createFronRoutesDescribers(String outputFile, List<RouteDescriber> list) throws IOException {
 		final ExportedInsomniaWorkSpace exportedInsomniaWorkSpace = new ExportedInsomniaWorkSpace();
 		exportedInsomniaWorkSpace.setExportFormat(4);
 		final String workSpaceId = WORKSPACE_PREFIX + getRandomHexString32();

@@ -7,8 +7,6 @@ import lombok.Setter;
 
 import java.util.List;
 
-
-@SuppressWarnings("unused")
 @Getter
 @Setter
 public class Item {

@@ -1,43 +1,25 @@
 package com.musta.belmo.openapiinsomnia.postman;
 
-import java.util.ArrayList;
+import com.musta.belmo.openapiinsomnia.AbstractTransformerService;
+import com.musta.belmo.openapiinsomnia.Writers;
+import com.musta.belmo.openapiinsomnia.postman.creators.AuthCreator;
+import com.musta.belmo.openapiinsomnia.postman.creators.InfoCreator;
+import com.musta.belmo.openapiinsomnia.postman.creators.ItemsCreatore;
+import com.musta.belmo.openapiinsomnia.postman.creators.VariableCreator;
+import com.musta.belmo.openapiinsomnia.postman.objects.Postman;
+import com.musta.belmo.openapiinsomnia.routes.objects.RouteDescriber;
 
-public class PostmanService {
-	public static void main(String[] args) {
-		Postman postman = new Postman();
-		setAuth(postman);
-		setInfo(postman);
-		setItems(postman);
-		setVariables(postman);
-		
-		
-	}
-	
-	private static void setAuth(Postman postman) {
-		Auth auth = new Auth();
-		ArrayList<Basic> basic = new ArrayList<>();
-		auth.setBasic(basic);
-		auth.setType("");
-		
-		postman.setAuth(auth);
-	}
-	
-	private static void setInfo(Postman postman) {
-		Info info = new Info();
-		info.set_postmanId("");
-		info.setName("");
-		info.setSchema("");
-		
-		postman.setInfo(info);
-	}
-	
-	private static void setVariables(Postman postman) {
-		ArrayList<Variable> variable = new ArrayList<>();
-		postman.setVariable(variable);
-	}
-	
-	private static void setItems(Postman postman) {
-		ArrayList<Item> item = new ArrayList<>();
-		postman.setItem(item);
+import java.io.IOException;
+import java.util.List;
+
+public class PostmanService extends AbstractTransformerService {
+	@Override
+	public String createFromRoutesDescribers(String outputFile, List<RouteDescriber> describers) throws IOException {
+		final Postman postman = new Postman();
+		AuthCreator.createAuth(postman);
+		InfoCreator.createInfo(postman);
+		ItemsCreatore.createItems(postman, describers);
+		VariableCreator.createVariables(postman);
+		return Writers.writeToJsonFile(outputFile, postman);
 	}
 }

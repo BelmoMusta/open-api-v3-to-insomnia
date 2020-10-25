@@ -1,10 +1,10 @@
-package com.musta.belmo.openapiinsomnia.postman;
+package com.musta.belmo.openapiinsomnia.postman.objects;
 
 import lombok.Getter;
 import lombok.Setter;
 
 
-@SuppressWarnings("unused")
+
 @Getter
 @Setter
 public class Body {
